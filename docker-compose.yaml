@@ -8,7 +8,7 @@ services:
             - "./profiles.yml:/root/.dbt/profiles.yml"
         # command: "debug"
         # command: "run --var='{\"integration_id\": \"dc24aa96-7a1f-4abb-b1cc-992848ad5971\", \"workspace_id\": \"1203531897608619\"}'"
-        command: "run --vars='{\"table_prefix\":\"_ec46ecfa\",\"timestamp\":\"1674902623.235171\",\"integration_id\":\"ec46ecfa-65c0-48aa-aef5-7cff03bedbbb\"}'"
+        command: "run --vars='{\"table_prefix\":\"_2165933d\",\"timestamp\":\"1689897322.8686342\",\"workspace_id\":\"None\",\"integration_id\":\"2165933d-e528-4147-ae5a-ad50e6da545d\"}'"
         networks:
             default:
             db-bridge:
