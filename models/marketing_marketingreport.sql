@@ -10,6 +10,10 @@ SELECT
     md5(
       '{{ var("integration_id") }}' ||
       "{{ var("table_prefix") }}_reports"."campaign_id" ||
+      "{{ var("table_prefix") }}_reports"."site_url" ||
+      "{{ var("table_prefix") }}_reports"."country_id" ||
+      "{{ var("table_prefix") }}_reports"."mobile_connection_type_id" ||
+      date_trunc('hour', "{{ var("table_prefix") }}_reports"."_airbyte_emitted_at") ||
       'campaign' ||
       'equativ'
     )  as id,
@@ -18,6 +22,7 @@ SELECT
     _airbyte_raw_{{ var("table_prefix") }}_reports._airbyte_data as last_raw_data, 
     "{{ var("table_prefix") }}_reports"."campaign_id" as external_id,
     '{{ var("timestamp") }}' as sync_timestamp,
+    date_trunc('hour', "{{ var("table_prefix") }}_reports"."_airbyte_emitted_at") as event_hour,
     impressions,
     campaign_id,
     campaign_name,
