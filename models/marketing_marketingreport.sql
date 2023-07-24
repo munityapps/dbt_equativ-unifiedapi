@@ -27,7 +27,17 @@ SELECT
     campaign_status,
     site_name,
     site_url,
-    image_weight
+    image_weight,
+    video_content_duration,
+    mobile_connection_type_id,
+    country_id,
+    country_name,
+    agency_name,
+    advertiser_name,
+    advertiser_sales_person_name,
+    domain,
+    pack_id,
+    pack_name
 FROM "{{ var("table_prefix") }}_reports"
 LEFT JOIN _airbyte_raw_{{ var("table_prefix") }}_reports
 ON _airbyte_raw_{{ var("table_prefix") }}_reports._airbyte_ab_id = "{{ var("table_prefix") }}_reports"._airbyte_ab_id
